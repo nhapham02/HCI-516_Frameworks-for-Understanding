@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frameworks for Understanding — TEMPLATE</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --muted: #5c5f7a;
+    --light: #f4f2ed;
+    --paper: #faf9f6;
+    --accent: #c0392b;
+    --teal: #2c7873;
+    --amber: #d4a843;
+    --stage1: #e8e0d5;
+    --stage2: #d9e8e3;
+    --stage3: #e3e8d9;
+    --stage4: #f0e5d5;
+    --barrier: #f5ddd8;
+    --enabler: #d8ede7;
+    --border: #dbd8d0;
+    --placeholder: #c8c4bb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page { max-width: 1200px; margin: 0 auto; padding: 48px 40px; }
+
+  /* TEMPLATE BANNER */
+  .template-banner {
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    border-radius: 2px;
+  }
+
+  /* FILL-IN FIELD */
+  .fill {
+    display: inline-block;
+    border-bottom: 2px dashed var(--accent);
+    color: var(--accent);
+    font-style: italic;
+    padding: 0 4px;
+    min-width: 80px;
+  }
+  .fill-block {
+    background: white;
+    border: 2px dashed var(--placeholder);
+    border-radius: 3px;
+    padding: 12px 16px;
+    color: var(--placeholder);
+    font-style: italic;
+    font-size: 12px;
+    min-height: 60px;
+    margin: 6px 0;
+  }
+  .fill-block.tall { min-height: 100px; }
+
+  /* HEADER */
+  .header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+  }
+  .label-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  }
+  .header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; line-height: 1.1; color: var(--ink); }
+  .header h1 em { font-style: italic; color: var(--accent); }
+  .header-meta { margin-top: 12px; font-size: 13px; color: var(--muted); display: flex; gap: 32px; }
+  .header-meta span::before { content: '— '; }
+
+  /* SECTION */
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--ink); margin-bottom: 6px; }
+  .section-sub {
+    font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+
+  /* JOURNEY */
+  .journey-container {
+    background: var(--light); border: 1.5px solid var(--border);
+    border-radius: 4px; padding: 32px; margin-bottom: 32px;
+  }
+  .anchor-bar {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1.5px dashed var(--border);
+  }
+  .anchor-icon { font-size: 22px; }
+  .anchor-text { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); }
+  .anchor-text span { color: var(--accent); }
+  .view-badge {
+    margin-left: auto; background: var(--ink); color: var(--paper);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 4px 10px; border-radius: 2px;
+  }
+
+  /* STAGES */
+  .stages-grid { display: grid; grid-template-columns: 80px repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .stage-card { border-radius: 3px; padding: 14px 12px; }
+  .stage-card.s1 { background: var(--stage1); }
+  .stage-card.s2 { background: var(--stage2); }
+  .stage-card.s3 { background: var(--stage3); }
+  .stage-card.s4 { background: var(--stage4); }
+  .stage-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .stage-name { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+  .stage-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  .emotion-pill {
+    display: inline-block; margin-top: 8px;
+    background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 20px; padding: 2px 8px; font-size: 10px; color: var(--ink); font-weight: 500;
+  }
+
+  /* TIMELINE */
+  .timeline-row { display: flex; align-items: center; margin-bottom: 10px; }
+  .actor-col {
+    width: 80px; flex-shrink: 0; display: flex; flex-direction: column;
+    align-items: center; font-size: 10px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; gap: 4px;
+  }
+  .actor-icon { font-size: 28px; }
+  .timeline-line { flex: 1; height: 3px; background: linear-gradient(to right, var(--teal), var(--ink)); margin: 0 8px; }
+  .start-dot, .end-dot {
+    width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--ink);
+    background: var(--paper); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 10px; font-weight: 700;
+  }
+  .end-dot { background: var(--teal); border-color: var(--teal); color: white; }
+  .endpoint-label { font-size: 10px; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-left: 6px; flex-shrink: 0; }
+  .startpoint-label { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 6px; flex-shrink: 0; }
+
+  /* BE */
+  .be-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .be-label-col { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; }
+  .be-label { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); color: var(--muted); }
+  .enablers-col { background: var(--enabler); border-radius: 3px; padding: 14px; }
+  .barriers-col { background: var(--barrier); border-radius: 3px; padding: 14px; }
+  .be-col-title { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .be-col-title.e { color: var(--teal); }
+  .be-col-title.b { color: var(--accent); }
+  .be-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .be-chip { border-radius: 3px; padding: 4px 9px; font-size: 11px; font-weight: 500; }
+  .be-chip.e { background: rgba(44,120,115,0.15); color: var(--teal); }
+  .be-chip.b { background: rgba(192,57,43,0.12); color: var(--accent); }
+  .be-chip.placeholder { background: white; border: 1.5px dashed var(--placeholder); color: var(--placeholder); font-style: italic; }
+
+  /* ACTORS */
+  .actors-row { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--border); display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  .actors-title { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-right: 8px; align-self: center; }
+  .actor-pill { background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 500; color: var(--ink); display: flex; align-items: center; gap: 5px; }
+  .actor-pill .role { font-size: 9px; color: var(--muted); font-weight: 400; }
+
+  /* DESC */
+  .description-block { margin-bottom: 48px; }
+  .desc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .desc-card { background: var(--light); border: 1px solid var(--border); border-radius: 3px; padding: 18px; }
+  .desc-card h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .desc-card p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  /* DIVIDER */
+  .section-divider { border: none; border-top: 2px solid var(--ink); margin: 56px 0 40px; }
+
+  /* ARCHETYPE */
+  .archetype-container { display: grid; grid-template-columns: 280px 1fr; gap: 24px; margin-bottom: 32px; }
+  .archetype-identity { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 28px 24px; display: flex; flex-direction: column; gap: 20px; }
+  .archetype-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: white; line-height: 1.2; margin-bottom: 4px; }
+  .archetype-tagline { font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; line-height: 1.5; }
+  .archetype-divider { border: none; border-top: 1px solid rgba(255,255,255,0.15); }
+  .profile-row { display: flex; flex-direction: column; gap: 6px; }
+  .profile-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .profile-value { font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+  .archetype-right { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; gap: 12px; }
+  .arch-card { background: var(--light); border: 1.5px solid var(--border); border-radius: 3px; padding: 18px; }
+  .arch-card.goals { border-left: 4px solid var(--teal); }
+  .arch-card.motivation { border-left: 4px solid var(--amber); }
+  .arch-card.mental { border-left: 4px solid var(--accent); grid-column: 1 / -1; }
+  .arch-card.self-image { border-left: 4px solid #7b6d8d; }
+  .arch-card.coping { border-left: 4px solid #5b8fb9; }
+  .arch-card-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+  }
+  .arch-card-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .arch-card h3 { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 10px; color: var(--ink); }
+  .arch-card p { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+  .arch-quote {
+    background: white; border-left: 3px solid var(--border); padding: 8px 12px;
+    font-size: 11.5px; color: var(--ink); font-style: italic; border-radius: 0 3px 3px 0; margin-top: 8px;
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--ink); }
+  .arch-desc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+
+  .process-note {
+    background: var(--ink); color: rgba(255,255,255,0.8); border-radius: 4px;
+    padding: 24px 28px; margin-top: 48px; font-size: 12.5px; line-height: 1.7;
+  }
+  .process-note h4 { font-family: 'DM Serif Display', serif; font-size: 17px; color: white; margin-bottom: 10px; }
+
+  @media print { body { background: white; } .page { padding: 24px; } }
+</style>
+</head>
+<body>
+<div class="template-banner">⚠ Blank Template — Fill in all fields marked in red dashes before finalising</div>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="label-tag">HCI 516 · Frameworks for Understanding</div>
+    <h1>Journey towards <em><span class="fill">[your journey title]</span></em><br><span class="fill">[subtitle / context]</span></h1>
+    <div class="header-meta">
+      <span><span class="fill">[view level]</span></span>
+      <span><span class="fill">[archetype name]</span></span>
+      <span>Based on <span class="fill">[#]</span> participant interviews</span>
+    </div>
+    <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-right:4px;">Group Members</span>
+      <span style="background:var(--light);border:1px solid var(--border);border-radius:2px;padding:3px 10px;font-size:11px;color:var(--ink);">Conrad, Vi</span>
+      <span style="background:var(--light);border:1px solid var(--border);border-radius:2px;padding:3px 10px;font-size:11px;color:var(--ink);">Kandukuri, Pranavi</span>
+      <span style="background:var(--light);border:1px solid var(--border);border-radius:2px;padding:3px 10px;font-size:11px;color:var(--ink);">Knox, Tammy-Elizabeth</span>
+      <span style="background:var(--light);border:1px solid var(--border);border-radius:2px;padding:3px 10px;font-size:11px;color:var(--ink);">Lang, Dessi</span>
+      <span style="background:var(--light);border:1px solid var(--border);border-radius:2px;padding:3px 10px;font-size:11px;color:var(--ink);">Pham, Nha</span>
+    </div>
+  </div>
+
+  <!-- ═══ PART 1: JOURNEY MAP ═══ -->
+  <div class="label-tag">Part 1</div>
+  <div class="section-title">Journey Map</div>
+  <div class="section-sub">Visual framework + written description</div>
+
+  <div class="journey-container">
+
+    <!-- Anchor bar -->
+    <div class="anchor-bar">
+      <span class="anchor-icon">⚓</span>
+      <div>
+        <div class="anchor-text">Journey towards <span><span class="fill">[anchor — what is this journey toward?]</span></span></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;"><span class="fill">[One sentence describing the story this map is trying to tell]</span></div>
+      </div>
+      <div class="view-badge"><span class="fill" style="color:white;border-color:white;">[Micro / Macro]</span></div>
+    </div>
+
+    <!-- Stage cards -->
+    <div class="stages-grid">
+      <div></div>
+
+      <div class="stage-card s1">
+        <div class="stage-label">Stage 1</div>
+        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
+        <div class="stage-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+      </div>
+
+      <div class="stage-card s2">
+        <div class="stage-label">Stage 2</div>
+        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
+        <div class="stage-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</div>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+      </div>
+
+      <div class="stage-card s3">
+        <div class="stage-label">Stage 3</div>
+        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
+        <div class="stage-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.</div>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+      </div>
+
+      <div class="stage-card s4">
+        <div class="stage-label">Stage 4</div>
+        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
+        <div class="stage-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+      </div>
+    </div>
+
+    <!-- Inflection point labels -->
+    <div style="display:grid;grid-template-columns:80px repeat(4,1fr);gap:8px;margin-bottom:8px;">
+      <div></div>
+      <div></div>
+      <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
+        <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
+        INFLECTION POINT 1<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe milestone]</span></span>
+      </div>
+      <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
+        <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
+        INFLECTION POINT 2<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe milestone]</span></span>
+      </div>
+      <div style="font-size:10px;font-weight:700;color:var(--teal);padding:0 12px;display:flex;align-items:center;gap:5px;">
+        <span style="display:block;width:2px;height:24px;background:var(--teal);flex-shrink:0;"></span>
+        ENDPOINT<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe endpoint]</span></span>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-row" style="margin-bottom:20px;">
+      <div class="actor-col">
+        <span class="actor-icon">🧍</span>
+        Actor
+      </div>
+      <div class="startpoint-label">Start</div>
+      <div class="start-dot">○</div>
+      <div class="timeline-line"></div>
+      <div class="end-dot">✓</div>
+      <div class="endpoint-label"><span class="fill">[Endpoint label]</span></div>
+    </div>
+
+    <!-- Enablers & Barriers -->
+    <div class="be-grid">
+      <div class="be-label-col">
+        <div class="be-label">Enablers ↑</div>
+        <div class="be-label">Barriers ↓</div>
+      </div>
+
+      <div class="enablers-col">
+        <div class="be-col-title e"><span>→</span> Behavioral Enablers</div>
+        <div class="be-items">
+          <span class="be-chip placeholder">+ enabler 1</span>
+          <span class="be-chip placeholder">+ enabler 2</span>
+          <span class="be-chip placeholder">+ enabler 3</span>
+          <span class="be-chip placeholder">+ enabler 4</span>
+          <span class="be-chip placeholder">+ enabler 5</span>
+          <span class="be-chip placeholder">+ add more as needed</span>
+        </div>
+      </div>
+
+      <div class="barriers-col">
+        <div class="be-col-title b"><span>←</span> Behavioral Barriers</div>
+        <div class="be-items">
+          <span class="be-chip placeholder">− barrier 1</span>
+          <span class="be-chip placeholder">− barrier 2</span>
+          <span class="be-chip placeholder">− barrier 3</span>
+          <span class="be-chip placeholder">− barrier 4</span>
+          <span class="be-chip placeholder">− barrier 5</span>
+          <span class="be-chip placeholder">− add more as needed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actors -->
+    <div class="actors-row">
+      <span class="actors-title">Actors</span>
+      <div class="actor-pill">🧍 <span class="fill">[Primary Actor]</span> <span class="role">Primary</span></div>
+      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
+      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
+      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
+    </div>
+
+  </div>
+
+  <!-- Written Description -->
+  <div class="description-block">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Written Description of Journey Components</div>
+    <div class="desc-grid">
+      <div class="desc-card">
+        <h4>Anchor &amp; View</h4>
+        <div class="fill-block tall">Describe the anchor frame and what story this map is trying to tell. Explain why you chose micro or macro view and what that means for the scope of this journey.</div>
+      </div>
+      <div class="desc-card">
+        <h4>Start &amp; End Points</h4>
+        <div class="fill-block tall">Describe where the journey begins and where it ends. Is the endpoint definitive or continuously evolving? Justify these choices based on your research.</div>
+      </div>
+      <div class="desc-card">
+        <h4>Inflection Points</h4>
+        <div class="fill-block tall">Describe your key inflection points / milestones. What makes these the critical turning points in the journey? What changes at each one?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Stages</h4>
+        <div class="fill-block tall">Describe each stage and what characterizes it. How were stages derived from your research data? What is happening behaviorally, emotionally, or mentally in each one?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Enablers &amp; Barriers</h4>
+        <div class="fill-block tall">Describe the key enablers and barriers. Are they structural, psychobehavioral, or social? How do they relate to the appraisal concepts from class (relevance, implications, coping, norms)?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Process</h4>
+        <div class="fill-block tall">Describe how you built this map. What data sources did you draw from? How were the stages, inflection points, and behavioral factors identified? What choices did you make and why?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PART 2: BEHAVIORAL ARCHETYPE ═══ -->
+  <hr class="section-divider">
+
+  <div class="label-tag">Part 2</div>
+  <div class="section-title">Behavioral Archetype</div>
+  <div class="section-sub">Visual framework + written description</div>
+
+  <div class="archetype-container">
+
+    <!-- Identity -->
+    <div class="archetype-identity">
+      <div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px;">Archetype</div>
+        <div class="archetype-name"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.4);">[Archetype Name]</span></div>
+        <div class="archetype-tagline"><span class="fill" style="color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.3);">"[defining quote or tagline]"</span></div>
+      </div>
+      <hr class="archetype-divider">
+      <div class="profile-row">
+        <div class="profile-label">Profile</div>
+        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[Demographic + behavioral profile summary]</span></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Context</div>
+        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[What context are they in? What life situation?]</span></div>
+      </div>
+      <div class="profile-row">
+        <div class="profile-label">Relationship to help</div>
+        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[How do they relate to the target behavior?]</span></div>
+      </div>
+      <hr class="archetype-divider">
+      <div style="font-size:11px;color:rgba(255,255,255,0.4);">Based on: <span class="fill" style="color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.25);">[participant IDs]</span></div>
+    </div>
+
+    <!-- Right grid -->
+    <div class="archetype-right">
+
+      <div class="arch-card goals">
+        <div class="arch-card-title">Goals <span style="font-size:9px;color:var(--teal);font-weight:400;">(required)</span></div>
+        <h3><span class="fill">[Goal headline]</span></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
+        <p><span class="fill">[Add more detail about goals. What is the situation's relevance to this individual's goals?]</span></p>
+        <div class="tag-list">
+          <span class="tag"><span class="fill">[goal tag]</span></span>
+          <span class="tag"><span class="fill">[goal tag]</span></span>
+          <span class="tag"><span class="fill">[goal tag]</span></span>
+        </div>
+      </div>
+
+      <div class="arch-card motivation">
+        <div class="arch-card-title">Motivation <span style="font-size:9px;color:var(--amber);font-weight:400;">(required)</span></div>
+        <h3><span class="fill">[Motivation headline]</span></h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.</p>
+        <p><span class="fill">[What is driving them toward completion of a goal? Why are they doing what they are doing?]</span></p>
+        <div class="arch-quote"><span class="fill">[Participant quote that captures motivation — Source ID]</span></div>
+      </div>
+
+      <div class="arch-card mental">
+        <div class="arch-card-title">Mental Models <span style="font-size:9px;color:var(--accent);font-weight:400;">(required)</span></div>
+        <h3><span class="fill">[Mental models headline — e.g. "The frameworks that shape their decisions"]</span></h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 1 name]</span></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua veniam.</p>
+            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 2 name]</span></div>
+            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate.</p>
+            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 3 name]</span></div>
+            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum duis aute irure dolor.</p>
+            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Choose 2 from the remaining options — delete the ones you don't use -->
+      <div class="arch-card self-image">
+        <div class="arch-card-title">Self-image / Internal Standards <span style="font-size:9px;color:#7b6d8d;font-weight:400;">(pick 2 of 5)</span></div>
+        <h3><span class="fill">[Self-image headline]</span></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        <p><span class="fill">[How does this individual perceive themselves? How does that perception affect their decisions?]</span></p>
+        <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+      </div>
+
+      <div class="arch-card coping">
+        <div class="arch-card-title">Coping <span style="font-size:9px;color:#5b8fb9;font-weight:400;">(pick 2 of 5)</span></div>
+        <h3><span class="fill">[Coping headline]</span></h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+        <p><span class="fill">[What is this individual doing to deal with conflict? What mechanisms do they use?]</span></p>
+        <div class="tag-list">
+          <span class="tag"><span class="fill">[coping mechanism]</span></span>
+          <span class="tag"><span class="fill">[coping mechanism]</span></span>
+          <span class="tag"><span class="fill">[coping mechanism]</span></span>
+          <span class="tag"><span class="fill">[coping mechanism]</span></span>
+        </div>
+      </div>
+
+      <!-- OPTIONAL ADDITIONAL COMPONENTS — uncomment and use if needed
+      <div class="arch-card" style="border-left:4px solid #8fad6b;">
+        <div class="arch-card-title">Agency / Self-efficacy</div>
+        <h3>[Agency headline]</h3>
+        <p>[What does this individual feel about their ability to perform and control over outcomes?]</p>
+      </div>
+
+      <div class="arch-card" style="border-left:4px solid #c49a6c;">
+        <div class="arch-card-title">Norm Significance</div>
+        <h3>[Norm headline]</h3>
+        <p>[What are the social rules surrounding this context? How strongly does the individual relate to them?]</p>
+      </div>
+
+      <div class="arch-card" style="border-left:4px solid #9b6b9b;">
+        <div class="arch-card-title">Power Dynamics</div>
+        <h3>[Power dynamics headline]</h3>
+        <p>[What hierarchies exist in their social context? How do these affect decision-making?]</p>
+      </div>
+      -->
+
+    </div>
+  </div>
+
+  <!-- Written Archetype Description -->
+  <div class="description-block">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Written Description of Archetype Components</div>
+    <div class="arch-desc-grid">
+      <div class="desc-card">
+        <h4>Goals &amp; Motivation</h4>
+        <div class="fill-block tall">Describe the archetype's goals and what motivates them. What is the situation's relevance to their goals? What is driving them toward or away from the target behavior?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Mental Models</h4>
+        <div class="fill-block tall">Describe the frameworks and beliefs this individual holds about this context. How do these mental models shape their decisions? What would need to shift for behavior to change?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Self-image &amp; Coping (or your chosen 2)</h4>
+        <div class="fill-block tall">Describe the two additional components you selected. How do they connect to the goals, motivation, and mental models above? What do they explain about the behavioral pattern?</div>
+      </div>
+      <div class="desc-card">
+        <h4>Process</h4>
+        <div class="fill-block tall">Describe how you built this archetype. What data and participants did you draw from? How did you identify the behavioral patterns that define this archetype? What did you include or leave out and why?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process note -->
+  <div class="process-note">
+    <h4>A Note on Process</h4>
+    <div class="fill-block" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4);">Add a brief overall note on your process — how you moved from raw interview data to these frameworks, any key decisions your group made, and what story these two frameworks together are trying to tell.</div>
+  </div>
+
+</div>
+</body>
+</html>

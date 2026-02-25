@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frameworks for Understanding — TEMPLATE</title>
+<title>Frameworks for Understanding — Mental Health Access</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -21,7 +21,6 @@
     --barrier: #f5ddd8;
     --enabler: #d8ede7;
     --border: #dbd8d0;
-    --placeholder: #c8c4bb;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,202 +33,372 @@
     line-height: 1.6;
   }
 
-  .page { max-width: 1200px; margin: 0 auto; padding: 48px 40px; }
-
-  /* TEMPLATE BANNER */
-  .template-banner {
-    background: var(--accent);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    border-radius: 2px;
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 40px;
   }
 
-  /* FILL-IN FIELD */
-  .fill {
-    display: inline-block;
-    border-bottom: 2px dashed var(--accent);
-    color: var(--accent);
-    font-style: italic;
-    padding: 0 4px;
-    min-width: 80px;
-  }
-  .fill-block {
-    background: white;
-    border: 2px dashed var(--placeholder);
-    border-radius: 3px;
-    padding: 12px 16px;
-    color: var(--placeholder);
-    font-style: italic;
-    font-size: 12px;
-    min-height: 60px;
-    margin: 6px 0;
-  }
-  .fill-block.tall { min-height: 100px; }
-
-  /* HEADER */
+  /* ── HEADER ── */
   .header {
     border-bottom: 2px solid var(--ink);
     padding-bottom: 24px;
     margin-bottom: 48px;
   }
   .label-tag {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
   }
-  .header h1 { font-family: 'DM Serif Display', serif; font-size: 42px; line-height: 1.1; color: var(--ink); }
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--ink);
+  }
   .header h1 em { font-style: italic; color: var(--accent); }
-  .header-meta { margin-top: 12px; font-size: 13px; color: var(--muted); display: flex; gap: 32px; }
+  .header-meta {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 32px;
+  }
   .header-meta span::before { content: '— '; }
 
-  /* SECTION */
-  .section-title { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--ink); margin-bottom: 6px; }
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
   .section-sub {
-    font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
   }
 
-  /* JOURNEY */
+  /* ── JOURNEY MAP ── */
   .journey-container {
-    background: var(--light); border: 1.5px solid var(--border);
-    border-radius: 4px; padding: 32px; margin-bottom: 32px;
+    background: var(--light);
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+    margin-bottom: 32px;
   }
+
   .anchor-bar {
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1.5px dashed var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1.5px dashed var(--border);
+    flex-wrap: wrap;
   }
-  .anchor-icon { font-size: 22px; }
-  .anchor-text { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); }
+  .anchor-icon { font-size: 22px; flex-shrink: 0; padding-top: 2px; }
+  .anchor-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--ink);
+    flex: 1;
+    min-width: 200px;
+  }
   .anchor-text span { color: var(--accent); }
   .view-badge {
-    margin-left: auto; background: var(--ink); color: var(--paper);
-    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; padding: 4px 10px; border-radius: 2px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-left: auto;
   }
 
-  /* STAGES */
-  .stages-grid { display: grid; grid-template-columns: 80px repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  /* Stages */
+  .stages-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .stages-grid {
+    display: grid;
+    grid-template-columns: 72px repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+    min-width: 580px;
+  }
   .stage-card { border-radius: 3px; padding: 14px 12px; }
   .stage-card.s1 { background: var(--stage1); }
   .stage-card.s2 { background: var(--stage2); }
   .stage-card.s3 { background: var(--stage3); }
   .stage-card.s4 { background: var(--stage4); }
-  .stage-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .stage-name { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+  .stage-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  .stage-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px; color: var(--ink); margin-bottom: 8px;
+  }
   .stage-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
   .emotion-pill {
-    display: inline-block; margin-top: 8px;
+    display: inline-block; margin-top: 8px; margin-right: 3px;
     background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 20px; padding: 2px 8px; font-size: 10px; color: var(--ink); font-weight: 500;
+    border-radius: 20px; padding: 2px 8px; font-size: 10px;
+    color: var(--ink); font-weight: 500;
   }
 
-  /* TIMELINE */
-  .timeline-row { display: flex; align-items: center; margin-bottom: 10px; }
+  /* Timeline */
+  .timeline-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .timeline-inner { min-width: 580px; }
+  .inflection-grid {
+    display: grid;
+    grid-template-columns: 72px repeat(4, 1fr);
+    gap: 8px; margin-bottom: 8px;
+  }
+  .timeline-row {
+    display: flex; align-items: center; margin-bottom: 20px;
+  }
   .actor-col {
-    width: 80px; flex-shrink: 0; display: flex; flex-direction: column;
-    align-items: center; font-size: 10px; font-weight: 600; color: var(--muted);
+    width: 72px; flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+    font-size: 10px; font-weight: 600; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.08em; gap: 4px;
   }
-  .actor-icon { font-size: 28px; }
-  .timeline-line { flex: 1; height: 3px; background: linear-gradient(to right, var(--teal), var(--ink)); margin: 0 8px; }
+  .actor-icon { font-size: 26px; }
+  .timeline-line {
+    flex: 1; height: 3px;
+    background: linear-gradient(to right, var(--teal), var(--ink));
+    margin: 0 8px;
+  }
   .start-dot, .end-dot {
-    width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--ink);
-    background: var(--paper); display: flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 3px solid var(--ink); background: var(--paper);
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; font-size: 10px; font-weight: 700;
   }
   .end-dot { background: var(--teal); border-color: var(--teal); color: white; }
-  .endpoint-label { font-size: 10px; color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-left: 6px; flex-shrink: 0; }
-  .startpoint-label { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 6px; flex-shrink: 0; }
+  .endpoint-label {
+    font-size: 10px; color: var(--teal); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-left: 6px; flex-shrink: 0;
+  }
+  .startpoint-label {
+    font-size: 10px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-right: 6px; flex-shrink: 0;
+  }
 
-  /* BE */
-  .be-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 12px; margin-top: 16px; }
-  .be-label-col { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; }
-  .be-label { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); color: var(--muted); }
+  /* Enablers & Barriers */
+  .be-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 12px; margin-top: 16px;
+  }
+  .be-label-col {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 16px;
+  }
+  .be-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; writing-mode: vertical-rl;
+    transform: rotate(180deg); color: var(--muted);
+  }
   .enablers-col { background: var(--enabler); border-radius: 3px; padding: 14px; }
   .barriers-col { background: var(--barrier); border-radius: 3px; padding: 14px; }
-  .be-col-title { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .be-col-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
   .be-col-title.e { color: var(--teal); }
   .be-col-title.b { color: var(--accent); }
   .be-items { display: flex; flex-wrap: wrap; gap: 6px; }
   .be-chip { border-radius: 3px; padding: 4px 9px; font-size: 11px; font-weight: 500; }
   .be-chip.e { background: rgba(44,120,115,0.15); color: var(--teal); }
   .be-chip.b { background: rgba(192,57,43,0.12); color: var(--accent); }
-  .be-chip.placeholder { background: white; border: 1.5px dashed var(--placeholder); color: var(--placeholder); font-style: italic; }
 
-  /* ACTORS */
-  .actors-row { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--border); display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
-  .actors-title { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-right: 8px; align-self: center; }
-  .actor-pill { background: white; border: 1.5px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 500; color: var(--ink); display: flex; align-items: center; gap: 5px; }
+  /* Supporting actors */
+  .actors-row {
+    margin-top: 20px; padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap;
+  }
+  .actors-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    margin-right: 4px; align-self: center;
+  }
+  .actor-pill {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 20px; padding: 4px 12px; font-size: 11px;
+    font-weight: 500; color: var(--ink);
+    display: flex; align-items: center; gap: 5px;
+  }
   .actor-pill .role { font-size: 9px; color: var(--muted); font-weight: 400; }
 
-  /* DESC */
+  /* ── WRITTEN DESCRIPTIONS ── */
   .description-block { margin-bottom: 48px; }
-  .desc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-  .desc-card { background: var(--light); border: 1px solid var(--border); border-radius: 3px; padding: 18px; }
-  .desc-card h4 { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .desc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 16px;
+  }
+  .desc-card {
+    background: var(--light); border: 1px solid var(--border);
+    border-radius: 3px; padding: 18px;
+  }
+  .desc-card h4 {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
   .desc-card p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  .desc-card p + p { margin-top: 8px; }
 
-  /* DIVIDER */
+  /* ── DIVIDER ── */
   .section-divider { border: none; border-top: 2px solid var(--ink); margin: 56px 0 40px; }
 
-  /* ARCHETYPE */
-  .archetype-container { display: grid; grid-template-columns: 280px 1fr; gap: 24px; margin-bottom: 32px; }
-  .archetype-identity { background: var(--ink); color: var(--paper); border-radius: 4px; padding: 28px 24px; display: flex; flex-direction: column; gap: 20px; }
-  .archetype-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: white; line-height: 1.2; margin-bottom: 4px; }
-  .archetype-tagline { font-size: 12px; color: rgba(255,255,255,0.55); font-style: italic; line-height: 1.5; }
+  /* ── ARCHETYPE ── */
+  .archetype-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px; margin-bottom: 32px;
+  }
+  .archetype-identity {
+    background: var(--ink); color: var(--paper);
+    border-radius: 4px; padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .archetype-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: white; line-height: 1.2; margin-bottom: 4px;
+  }
+  .archetype-tagline {
+    font-size: 12px; color: rgba(255,255,255,0.55);
+    font-style: italic; line-height: 1.5;
+  }
   .archetype-divider { border: none; border-top: 1px solid rgba(255,255,255,0.15); }
   .profile-row { display: flex; flex-direction: column; gap: 6px; }
-  .profile-label { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .profile-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+  }
   .profile-value { font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.5; }
 
-  .archetype-right { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; gap: 12px; }
-  .arch-card { background: var(--light); border: 1.5px solid var(--border); border-radius: 3px; padding: 18px; }
-  .arch-card.goals { border-left: 4px solid var(--teal); }
+  .archetype-right { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .arch-card {
+    background: var(--light); border: 1.5px solid var(--border);
+    border-radius: 3px; padding: 18px;
+  }
+  .arch-card.goals      { border-left: 4px solid var(--teal); }
   .arch-card.motivation { border-left: 4px solid var(--amber); }
-  .arch-card.mental { border-left: 4px solid var(--accent); grid-column: 1 / -1; }
-  .arch-card.self-image { border-left: 4px solid #7b6d8d; }
-  .arch-card.coping { border-left: 4px solid #5b8fb9; }
+  .arch-card.mental     { border-left: 4px solid var(--accent); grid-column: 1 / -1; }
+  .arch-card.coping     { border-left: 4px solid #5b8fb9; }
+  .arch-card.norm-sig   { border-left: 4px solid #7b6d8d; }
+
   .arch-card-title {
-    font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
   }
   .arch-card-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .arch-card h3 { font-family: 'DM Serif Display', serif; font-size: 16px; margin-bottom: 10px; color: var(--ink); }
+  .arch-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px; margin-bottom: 10px; color: var(--ink);
+  }
   .arch-card p { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
   .arch-quote {
-    background: white; border-left: 3px solid var(--border); padding: 8px 12px;
-    font-size: 11.5px; color: var(--ink); font-style: italic; border-radius: 0 3px 3px 0; margin-top: 8px;
+    background: white; border-left: 3px solid var(--border);
+    padding: 8px 12px; font-size: 11.5px; color: var(--ink);
+    font-style: italic; border-radius: 0 3px 3px 0; margin-top: 8px;
   }
   .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-  .tag { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--ink); }
+  .tag {
+    background: white; border: 1px solid var(--border);
+    border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--ink);
+  }
+  .mental-models-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .mm-label { font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+
   .arch-desc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
 
+  /* ── PROCESS NOTE ── */
   .process-note {
-    background: var(--ink); color: rgba(255,255,255,0.8); border-radius: 4px;
-    padding: 24px 28px; margin-top: 48px; font-size: 12.5px; line-height: 1.7;
+    background: var(--ink); color: rgba(255,255,255,0.8);
+    border-radius: 4px; padding: 24px 28px; margin-top: 48px;
+    font-size: 12.5px; line-height: 1.7;
   }
-  .process-note h4 { font-family: 'DM Serif Display', serif; font-size: 17px; color: white; margin-bottom: 10px; }
+  .process-note h4 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px; color: white; margin-bottom: 10px;
+  }
 
-  @media print { body { background: white; } .page { padding: 24px; } }
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    margin-top: 24px; padding: 16px 20px;
+    background: var(--light); border: 1px solid var(--border);
+    border-radius: 3px; font-size: 11px; color: var(--muted); line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--ink); }
+
+  /* ══════════════════════════════
+     MOBILE RESPONSIVENESS
+  ══════════════════════════════ */
+  @media (max-width: 900px) {
+    .page { padding: 32px 20px; }
+    .header h1 { font-size: 32px; }
+    .desc-grid { grid-template-columns: 1fr 1fr; }
+    .be-grid { grid-template-columns: 1fr 1fr; }
+    .be-label-col { display: none; }
+    .archetype-container { grid-template-columns: 1fr; }
+    .archetype-right { grid-template-columns: 1fr; }
+    .arch-card.mental { grid-column: 1; }
+    .mental-models-grid { grid-template-columns: 1fr; }
+    .arch-desc-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 24px 16px; }
+    .header h1 { font-size: 26px; }
+    .section-title { font-size: 21px; }
+    .journey-container { padding: 20px 14px; }
+    .anchor-bar { flex-direction: column; gap: 8px; }
+    .view-badge { margin-left: 0; align-self: flex-start; }
+    .desc-grid { grid-template-columns: 1fr; }
+    .be-grid { grid-template-columns: 1fr; gap: 10px; }
+    .process-note { padding: 20px 16px; }
+    .actors-row { gap: 8px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 24px; }
+  }
 </style>
 </head>
 <body>
-<div class="template-banner">⚠ Blank Template — Fill in all fields marked in red dashes before finalising</div>
 <div class="page">
 
   <!-- HEADER -->
   <div class="header">
     <div class="label-tag">HCI 516 · Frameworks for Understanding</div>
-    <h1>Journey towards <em><span class="fill">[your journey title]</span></em><br><span class="fill">[subtitle / context]</span></h1>
+    <h1>Journey towards <em>Scheduling</em><br>a Mental Health Appointment</h1>
     <div class="header-meta">
-      <span><span class="fill">[view level]</span></span>
-      <span><span class="fill">[archetype name]</span></span>
-      <span>Based on <span class="fill">[#]</span> participant interviews</span>
+      <span>Micro-level view</span>
+      <span>The High-Functioning Holdout archetype</span>
+      <span>Based on 10 participant interviews</span>
     </div>
     <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
       <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-right:4px;">Group Members</span>
@@ -241,7 +410,7 @@
     </div>
   </div>
 
-  <!-- ═══ PART 1: JOURNEY MAP ═══ -->
+  <!-- ═══════════ PART 1: JOURNEY MAP ═══════════ -->
   <div class="label-tag">Part 1</div>
   <div class="section-title">Journey Map</div>
   <div class="section-sub">Visual framework + written description</div>
@@ -251,79 +420,73 @@
     <!-- Anchor bar -->
     <div class="anchor-bar">
       <span class="anchor-icon">⚓</span>
-      <div>
-        <div class="anchor-text">Journey towards <span><span class="fill">[anchor — what is this journey toward?]</span></span></div>
-        <div style="font-size:11px;color:var(--muted);margin-top:2px;"><span class="fill">[One sentence describing the story this map is trying to tell]</span></div>
+      <div style="flex:1;min-width:200px;">
+        <div class="anchor-text">Journey towards <span>Scheduling a Mental Health Appointment</span></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">The story of a young adult who recognizes a need for care, navigates internal and systemic friction, and takes action.</div>
       </div>
-      <div class="view-badge"><span class="fill" style="color:white;border-color:white;">[Micro / Macro]</span></div>
+      <div class="view-badge">Micro View</div>
     </div>
 
-    <!-- Stage cards -->
-    <div class="stages-grid">
-      <div></div>
-
-      <div class="stage-card s1">
-        <div class="stage-label">Stage 1</div>
-        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
-        <div class="stage-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-      </div>
-
-      <div class="stage-card s2">
-        <div class="stage-label">Stage 2</div>
-        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
-        <div class="stage-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</div>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-      </div>
-
-      <div class="stage-card s3">
-        <div class="stage-label">Stage 3</div>
-        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
-        <div class="stage-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.</div>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-      </div>
-
-      <div class="stage-card s4">
-        <div class="stage-label">Stage 4</div>
-        <div class="stage-name"><span class="fill">[Stage Name]</span></div>
-        <div class="stage-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
-        <span class="emotion-pill"><span class="fill">[Emotion]</span></span>
+    <!-- Stages -->
+    <div class="stages-scroll">
+      <div class="stages-grid">
+        <div></div>
+        <div class="stage-card s1">
+          <div class="stage-label">Stage 1</div>
+          <div class="stage-name">Recognition</div>
+          <div class="stage-desc">The individual realizes they're struggling with their mental health after going through hardships, difficulties, or stressful times in their lives.</div>
+          <span class="emotion-pill">😶 Overwhelm</span>
+        </div>
+        <div class="stage-card s2">
+          <div class="stage-label">Stage 2</div>
+          <div class="stage-name">Internal Deliberation</div>
+          <div class="stage-desc">They go through an internal deliberation where they decide to seek help — grappling with self-sufficiency, stigma, and whether their struggles are "bad enough."</div>
+          <span class="emotion-pill">💪 Determination</span>
+        </div>
+        <div class="stage-card s3">
+          <div class="stage-label">Stage 3</div>
+          <div class="stage-name">Searching</div>
+          <div class="stage-desc">They get recommendations from friends and family, search online resources, or use readily available resources such as student counselors. They're looking for someone they can relate to.</div>
+          <span class="emotion-pill">💪 Determination</span>
+        </div>
+        <div class="stage-card s4">
+          <div class="stage-label">Stage 4</div>
+          <div class="stage-name">Scheduling</div>
+          <div class="stage-desc">Making contact: calling, filling out intake forms, navigating insurance. Barriers such as business-hours-only access, wait times, and cost create friction at this final step.</div>
+          <span class="emotion-pill">😮‍💨 Relief</span>
+          <span class="emotion-pill">😬 Anxiety</span>
+        </div>
       </div>
     </div>
 
-    <!-- Inflection point labels -->
-    <div style="display:grid;grid-template-columns:80px repeat(4,1fr);gap:8px;margin-bottom:8px;">
-      <div></div>
-      <div></div>
-      <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
-        <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
-        INFLECTION POINT 1<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe milestone]</span></span>
+    <!-- Timeline + Inflection Points -->
+    <div class="timeline-scroll">
+      <div class="timeline-inner">
+        <div class="inflection-grid">
+          <div></div>
+          <div style="font-size:10px;color:var(--muted);padding:0 12px;"></div>
+          <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
+            <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
+            INFLECTION POINT<br><span style="font-size:9px;font-weight:400;color:var(--muted);">Breaking point / Catalyst moment</span>
+          </div>
+          <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
+            <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
+            INFLECTION POINT<br><span style="font-size:9px;font-weight:400;color:var(--muted);">Decision to seek help</span>
+          </div>
+          <div style="font-size:10px;font-weight:700;color:var(--teal);padding:0 12px;display:flex;align-items:center;gap:5px;">
+            <span style="display:block;width:2px;height:24px;background:var(--teal);flex-shrink:0;"></span>
+            ENDPOINT<br><span style="font-size:9px;font-weight:400;color:var(--muted);">Appointment scheduled</span>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="actor-col"><span class="actor-icon">🧍</span>Actor</div>
+          <div class="startpoint-label">Start</div>
+          <div class="start-dot">○</div>
+          <div class="timeline-line"></div>
+          <div class="end-dot">✓</div>
+          <div class="endpoint-label">Appt. Scheduled</div>
+        </div>
       </div>
-      <div style="font-size:10px;font-weight:700;color:var(--accent);padding:0 12px;display:flex;align-items:center;gap:5px;">
-        <span style="display:block;width:2px;height:24px;background:var(--accent);flex-shrink:0;"></span>
-        INFLECTION POINT 2<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe milestone]</span></span>
-      </div>
-      <div style="font-size:10px;font-weight:700;color:var(--teal);padding:0 12px;display:flex;align-items:center;gap:5px;">
-        <span style="display:block;width:2px;height:24px;background:var(--teal);flex-shrink:0;"></span>
-        ENDPOINT<br><span style="font-size:9px;font-weight:400;color:var(--muted);"><span class="fill">[describe endpoint]</span></span>
-      </div>
-    </div>
-
-    <!-- Timeline -->
-    <div class="timeline-row" style="margin-bottom:20px;">
-      <div class="actor-col">
-        <span class="actor-icon">🧍</span>
-        Actor
-      </div>
-      <div class="startpoint-label">Start</div>
-      <div class="start-dot">○</div>
-      <div class="timeline-line"></div>
-      <div class="end-dot">✓</div>
-      <div class="endpoint-label"><span class="fill">[Endpoint label]</span></div>
     </div>
 
     <!-- Enablers & Barriers -->
@@ -332,75 +495,104 @@
         <div class="be-label">Enablers ↑</div>
         <div class="be-label">Barriers ↓</div>
       </div>
-
       <div class="enablers-col">
-        <div class="be-col-title e"><span>→</span> Behavioral Enablers</div>
+        <div class="be-col-title e"><span style="font-size:14px;">→</span> Behavioral Enablers</div>
         <div class="be-items">
-          <span class="be-chip placeholder">+ enabler 1</span>
-          <span class="be-chip placeholder">+ enabler 2</span>
-          <span class="be-chip placeholder">+ enabler 3</span>
-          <span class="be-chip placeholder">+ enabler 4</span>
-          <span class="be-chip placeholder">+ enabler 5</span>
-          <span class="be-chip placeholder">+ add more as needed</span>
+          <span class="be-chip e">Peer normalization of therapy</span>
+          <span class="be-chip e">Seeing a close friend seek help successfully</span>
+          <span class="be-chip e">High-status peer influence</span>
+          <span class="be-chip e">Social support (friends/family helping find providers)</span>
+          <span class="be-chip e">Mom's encouragement</span>
+          <span class="be-chip e">Breaking point forcing action</span>
+          <span class="be-chip e">Prior belief in mental health care (felt hypocritical not going)</span>
+          <span class="be-chip e">Online platforms (e.g. Zocdoc)</span>
+          <span class="be-chip e">School-based resources</span>
+          <span class="be-chip e">Realization: "can't do this alone"</span>
+          <span class="be-chip e">Provider connections via network</span>
         </div>
       </div>
-
       <div class="barriers-col">
-        <div class="be-col-title b"><span>←</span> Behavioral Barriers</div>
+        <div class="be-col-title b"><span style="font-size:14px;">←</span> Behavioral Barriers</div>
         <div class="be-items">
-          <span class="be-chip placeholder">− barrier 1</span>
-          <span class="be-chip placeholder">− barrier 2</span>
-          <span class="be-chip placeholder">− barrier 3</span>
-          <span class="be-chip placeholder">− barrier 4</span>
-          <span class="be-chip placeholder">− barrier 5</span>
-          <span class="be-chip placeholder">− add more as needed</span>
+          <span class="be-chip b">Insurance complexity and unclear costs</span>
+          <span class="be-chip b">Scheduling friction (business hours, waitlists)</span>
+          <span class="be-chip b">Generational stigma perceived in family/older relatives</span>
+          <span class="be-chip b">Location access (rural vs. suburbs)</span>
+          <span class="be-chip b">Fear of family reactions</span>
+          <span class="be-chip b">"Still functioning" denial</span>
+          <span class="be-chip b">Hard to find a relatable provider</span>
+          <span class="be-chip b">Emotional activation energy</span>
+          <span class="be-chip b">Outdated/confusing provider lists</span>
+          <span class="be-chip b">No response from providers</span>
+          <span class="be-chip b">Not knowing how to start</span>
+          <span class="be-chip b">Rural/remote access and poor telehealth infrastructure</span>
         </div>
       </div>
     </div>
 
-    <!-- Actors -->
+    <!-- Supporting Actors -->
     <div class="actors-row">
-      <span class="actors-title">Actors</span>
-      <div class="actor-pill">🧍 <span class="fill">[Primary Actor]</span> <span class="role">Primary</span></div>
-      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
-      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
-      <div class="actor-pill">👥 <span class="fill">[Supporting Actor]</span> <span class="role"><span class="fill">[role]</span></span></div>
+      <span class="actors-title">Supporting Actors</span>
+      <div class="actor-pill">👥 Close Friends <span class="role">Social proof + encouragement</span></div>
+      <div class="actor-pill">👨‍👩‍👧 Family <span class="role">Mixed influence</span></div>
+      <div class="actor-pill">🏥 Insurance System <span class="role">Structural barrier</span></div>
+      <div class="actor-pill">👩‍⚕️ Mental Health Provider <span class="role">Target actor</span></div>
+      <div class="actor-pill">🏫 School/Employer <span class="role">Resource access</span></div>
     </div>
 
-  </div>
+  </div><!-- /journey-container -->
 
-  <!-- Written Description -->
+  <!-- Written Descriptions — Journey Map -->
   <div class="description-block">
     <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Written Description of Journey Components</div>
     <div class="desc-grid">
+
       <div class="desc-card">
         <h4>Anchor &amp; View</h4>
-        <div class="fill-block tall">Describe the anchor frame and what story this map is trying to tell. Explain why you chose micro or macro view and what that means for the scope of this journey.</div>
+        <p>The map represents the pathway toward scheduling a mental health appointment. It relates to a "point-of-access" journey as opposed to the broader continuum of mental health care at large. It represents a micro view of the process from identifying a need for help and then working through the necessary steps to schedule an appointment. We chose to limit the scope of the map to this narrow timeframe because most of the interview data we collected centered around this timeframe. The structural and behavioral barriers that participants encountered while trying to access care were prevalent throughout the interviews; there was very little discussion regarding the continuum of ongoing treatment.</p>
       </div>
+
       <div class="desc-card">
         <h4>Start &amp; End Points</h4>
-        <div class="fill-block tall">Describe where the journey begins and where it ends. Is the endpoint definitive or continuously evolving? Justify these choices based on your research.</div>
+        <p>The start point of the journey begins with the individual realizing that they are struggling with their mental health and that they need help. This eventually leads to the end point of setting an appointment with a professional. This is not a definitive destination and it is continuously evolving. Based on our interviews with the participants, we found that although all of them would get to a point of setting the appointment, there was still a need for further adjustment with who their long term provider would be.</p>
       </div>
+
       <div class="desc-card">
-        <h4>Inflection Points</h4>
-        <div class="fill-block tall">Describe your key inflection points / milestones. What makes these the critical turning points in the journey? What changes at each one?</div>
+        <h4>Inflection Points &amp; Milestones</h4>
+        <p>The markers of progress are as follows:</p>
+        <p>1. They become concerned about their mental health.<br>
+        &nbsp;&nbsp;&nbsp;a. As the individual begins to experience overwhelm after handling their experience on their own for a long time. They realize they become concerned with their mental health.</p>
+        <p>2. Deciding to seek help.<br>
+        &nbsp;&nbsp;&nbsp;a. After realizing that they cannot handle it on their own, they go through a period of time where they deliberate on whether they can handle it or not. This eventually leads them to decide to seek help.</p>
+        <p>3. Researching and searching for professional support.<br>
+        &nbsp;&nbsp;&nbsp;a. They begin researching their options and searching for a provider. They may get recommendations from their friends or family, use the school counselors, or find someone online with services like ZocDoc. They're looking for someone who they can relate to through gender, culture, lifestyle, or their social norms.</p>
+        <p>4. Scheduling an appointment.<br>
+        &nbsp;&nbsp;&nbsp;a. After they believe they've found a provider who they're comfortable with, they begin the process of scheduling an appointment. This can take time due to schedules, insurance, cost, and location. Once they've scheduled an appointment, then begins another step in the journey of finding the best fit.</p>
       </div>
+
       <div class="desc-card">
         <h4>Stages</h4>
-        <div class="fill-block tall">Describe each stage and what characterizes it. How were stages derived from your research data? What is happening behaviorally, emotionally, or mentally in each one?</div>
+        <p>1. Between realization of a problem to deciding to seek help.<br>
+        2. From deciding to seek help to finding a professional to work with.<br>
+        3. From finding a professional to work with to scheduling an appointment.</p>
+        <p>After reviewing our data, we used tags to denote the timeline, such as "became aware, made a decision, intent, and initiation. We managed these tags using web applications like Atlas.ti and EnjoyHQ. Additionally, we discussed what themes we saw across interviews.</p>
       </div>
+
       <div class="desc-card">
         <h4>Enablers &amp; Barriers</h4>
-        <div class="fill-block tall">Describe the key enablers and barriers. Are they structural, psychobehavioral, or social? How do they relate to the appraisal concepts from class (relevance, implications, coping, norms)?</div>
+        <p>The strongest and most consistent barrier to access was navigating the healthcare system – insurance complexity, provider availability, scheduling friction (Hypothesis 3). Insurance barriers were more frequently identified than cost barriers, with one participant (KC004), having reached his session limit before he could be clinically diagnosed, being denied additional sessions by his therapist who believed that the participant did not meet the requirements for treatment. Structural barriers also included geographic location; all rural participants and those from rural backgrounds reported a lack of providers in their town(s) and that telehealth services were not available to them because of poor Internet connectivity.</p>
+        <p>Psych-behavioral barriers can best be characterized as a threshold issue; participants consistently undermined their own suffering. Stigma was rarely identified as a direct barrier to participation; the majority of participants identified stigma as a phenomenon that was perceived in either other people or previous communities from which they had moved away from. Social and identity-based enablers were found to be nearly exclusively present; peer normalization, high status peers' willingness to seek help and, notably, one participant's motivation for seeking help was based upon the fact that she had always been a mental health advocate and would have appeared to be a hypocrite if she did not act on her own values (KC004).</p>
       </div>
+
       <div class="desc-card">
         <h4>Process</h4>
-        <div class="fill-block tall">Describe how you built this map. What data sources did you draw from? How were the stages, inflection points, and behavioral factors identified? What choices did you make and why?</div>
+        <p>The thematic map was generated from the data of ten interviews with usable response data (RM001, EF002, FR003, KC004, ND005, AR006, SP007, EP008, DC010). Five emerging themes were confirmed across the full interview set: crisis threshold, peer influence as tipping point, navigation maze, generational divide, and trust requires authenticity. Hypothesis #1 (Information Overload), was NOT supported by the interviewee's responses. Hypothesis #3 (Navigation/Insurance as Barrier), was strongly supported by the interviewee's responses. The interviewee, KC004, provided additional context to the insurance cap, rural barriers to access, and how previous advocacy efforts provided an additional source of motivation to seek help. There was one non-help-seeking participant in this study who was a no-show, the interviewee EF009, therefore there was no response data to synthesize.</p>
       </div>
+
     </div>
   </div>
 
-  <!-- ═══ PART 2: BEHAVIORAL ARCHETYPE ═══ -->
+  <!-- ═══════════ PART 2: BEHAVIORAL ARCHETYPE ═══════════ -->
   <hr class="section-divider">
 
   <div class="label-tag">Part 2</div>
@@ -409,147 +601,149 @@
 
   <div class="archetype-container">
 
-    <!-- Identity -->
+    <!-- Identity column -->
     <div class="archetype-identity">
       <div>
         <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px;">Archetype</div>
-        <div class="archetype-name"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.4);">[Archetype Name]</span></div>
-        <div class="archetype-tagline"><span class="fill" style="color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.3);">"[defining quote or tagline]"</span></div>
+        <div class="archetype-name">The High-Functioning<br>Holdout</div>
+        <div class="archetype-tagline">"I kept telling myself that I was fine, until it got really bad and I realized I wasn't."</div>
       </div>
       <hr class="archetype-divider">
       <div class="profile-row">
         <div class="profile-label">Profile</div>
-        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[Demographic + behavioral profile summary]</span></div>
+        <div class="profile-value">Young adult (20–35), student or early-career professional. High-functioning on the outside. Struggling quietly.</div>
       </div>
       <div class="profile-row">
         <div class="profile-label">Context</div>
-        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[What context are they in? What life situation?]</span></div>
+        <div class="profile-value">Navigating a transition period — school, first job, or life stressor — while maintaining external performance.</div>
       </div>
       <div class="profile-row">
         <div class="profile-label">Relationship to help</div>
-        <div class="profile-value"><span class="fill" style="color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.3);">[How do they relate to the target behavior?]</span></div>
+        <div class="profile-value">Has considered therapy but often delayed it for months to a year before taking action.</div>
       </div>
       <hr class="archetype-divider">
-      <div style="font-size:11px;color:rgba(255,255,255,0.4);">Based on: <span class="fill" style="color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.25);">[participant IDs]</span></div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.5);line-height:1.7;">
+        Based on: RM001, EF002, EP008, ND005, SP007, DC010<br>
+        <span style="color:rgba(255,255,255,0.3);font-size:10px;">Note: KC004 represents an alternate pathway (pre-existing advocacy, minimal delay). DC010 also had minimal delay but exhibited similar aspects. EF009 is a non-help-seeker (no-show).</span>
+      </div>
     </div>
 
-    <!-- Right grid -->
+    <!-- Right panel -->
     <div class="archetype-right">
 
+      <!-- Goals -->
       <div class="arch-card goals">
-        <div class="arch-card-title">Goals <span style="font-size:9px;color:var(--teal);font-weight:400;">(required)</span></div>
-        <h3><span class="fill">[Goal headline]</span></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
-        <p><span class="fill">[Add more detail about goals. What is the situation's relevance to this individual's goals?]</span></p>
+        <div class="arch-card-title">Goals</div>
+        <h3>Getting help with the overwhelm</h3>
+        <p>The goal is not to create a new version of yourself, but to be relieved. All of these participants were concerned with ending their anxiety about draining themselves in every way - emotionally, physically, financially etc. to continue to go through their daily routine. Participant RM001 wanted to stop simply doing things on autopilot, Participant FR003 wanted to receive some assistance with processing the postpartum physical/emotional changes that they did not realize were happening, and Participant EP008 wanted to have someone assist them in "fixing herself". The longer-term goal underneath all of that was restored functioning — showing up at work, in relationships, and in daily life without it taking everything they had.</p>
         <div class="tag-list">
-          <span class="tag"><span class="fill">[goal tag]</span></span>
-          <span class="tag"><span class="fill">[goal tag]</span></span>
-          <span class="tag"><span class="fill">[goal tag]</span></span>
+          <span class="tag">Restore functioning</span>
+          <span class="tag">Find trusted support</span>
+          <span class="tag">Regain control</span>
         </div>
       </div>
 
+      <!-- Motivation -->
       <div class="arch-card motivation">
-        <div class="arch-card-title">Motivation <span style="font-size:9px;color:var(--amber);font-weight:400;">(required)</span></div>
-        <h3><span class="fill">[Motivation headline]</span></h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.</p>
-        <p><span class="fill">[What is driving them toward completion of a goal? Why are they doing what they are doing?]</span></p>
-        <div class="arch-quote"><span class="fill">[Participant quote that captures motivation — Source ID]</span></div>
+        <div class="arch-card-title">Motivation</div>
+        <h3>A breaking point, not a plan</h3>
+        <p>Most people do not take the initiative to get help because they cannot find motivation to make that commitment to action. That motivation usually comes from a moment of unrelenting pain (failing school, feeling emotionally numb while traveling, crying in your own driveway) when the cost of getting help is less than the cost of staying away from help due to the overwhelming fear of seeking help.</p>
+        <p>Seeing peers get professional help can make it seem more real and possible to seek such services as well.</p>
+        <div class="arch-quote">"I sat in my driveway and got super emotional. I was just like - something is wrong." - EP008</div>
       </div>
 
+      <!-- Mental Models — full width -->
       <div class="arch-card mental">
-        <div class="arch-card-title">Mental Models <span style="font-size:9px;color:var(--accent);font-weight:400;">(required)</span></div>
-        <h3><span class="fill">[Mental models headline — e.g. "The frameworks that shape their decisions"]</span></h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+        <div class="arch-card-title">Mental Models</div>
+        <h3>If I'm still functioning, I don't need help.</h3>
+        <div class="mental-models-grid">
           <div>
-            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 1 name]</span></div>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua veniam.</p>
-            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+            <div class="mm-label">High Self-Concept &amp; Self-Efficacy</div>
+            <p>This archetype uses external performance as evidence that things are okay. RM001 described his thinking before seeking help as straightforward: if you're functioning, you don't need a therapist. EF002 assumed her anxiety was just common or normal, something everyone dealt with, and it only manifested at night when it was just her and her thoughts. FR003 was "working on autopilot" through postpartum depression and didn't register as significantly affecting daily life. The logic is almost self-sealing because they're still showing up, and the problem doesn't feel real enough to act on.</p>
+            <div class="arch-quote">"…as long as I'm functioning and working and getting stuff done, I don't need a therapist." - RM001</div>
           </div>
           <div>
-            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 2 name]</span></div>
-            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate.</p>
-            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+            <div class="mm-label">Self-Image: My concerns aren't that bad</div>
+            <p>Most participants compared their perceived levels of pain to an increasingly high pain benchmark to minimize their own pain. ND005 referred to this directly, stating he was afraid that the pain he felt would not be "important" to a therapist enough to justify a session for someone else who was experiencing more severe issues; therefore, why would his concerns be worthy of the same amount of attention? SP007 discussed having grown up with a good education, good friends, and good parents; however, stated she believed she required a tangible reason (such as a bad situation) to attend therapy as opposed to simply attending due to her perceived need for help. This perception causes the "bar" for "bad enough" to continue to rise and subsequently move further away from each participant's current level of distress.</p>
+            <div class="arch-quote">"I would definitely say like there have been times when my stress has been a little bit higher than normal…But I wouldn't say necessarily struggle with mental health, no." - DC010</div>
           </div>
           <div>
-            <div style="font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px;"><span class="fill">[Mental model 3 name]</span></div>
-            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum duis aute irure dolor.</p>
-            <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
+            <div class="mm-label">Uncertainty: Will I even find someone I trust?</div>
+            <p>Before participants contacted therapists, many had also taken into account the perceived hurdles they would encounter. SP007 identified finding an adequate therapist as extremely difficult, citing the outdated provider lists, the inability of hospital phone systems to properly route calls, and the student therapists leaving after six month rotations as examples of these obstacles. EF002 noted that initially, there was no single resource to provide information on locating a therapist, and she did not have a full understanding of therapy when she began her search. As such, the participant's expectations encountering difficulty in their pursuit of a therapist were validated as benign true for most of them. Validation of those expectations increased the apparent size of the barrier for future attempts.</p>
+            <div class="arch-quote">"It was hard to deep dive and understand everything about therapy. Hard to find therapists at the time. There wasn't anywhere you could go to find a list of therapists." — EF002</div>
           </div>
         </div>
       </div>
 
-      <!-- Choose 2 from the remaining options — delete the ones you don't use -->
-      <div class="arch-card self-image">
-        <div class="arch-card-title">Self-image / Internal Standards <span style="font-size:9px;color:#7b6d8d;font-weight:400;">(pick 2 of 5)</span></div>
-        <h3><span class="fill">[Self-image headline]</span></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
-        <p><span class="fill">[How does this individual perceive themselves? How does that perception affect their decisions?]</span></p>
-        <div class="arch-quote"><span class="fill">"[Supporting quote]" — ID</span></div>
-      </div>
-
+      <!-- Coping -->
       <div class="arch-card coping">
-        <div class="arch-card-title">Coping <span style="font-size:9px;color:#5b8fb9;font-weight:400;">(pick 2 of 5)</span></div>
-        <h3><span class="fill">[Coping headline]</span></h3>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
-        <p><span class="fill">[What is this individual doing to deal with conflict? What mechanisms do they use?]</span></p>
-        <div class="tag-list">
-          <span class="tag"><span class="fill">[coping mechanism]</span></span>
-          <span class="tag"><span class="fill">[coping mechanism]</span></span>
-          <span class="tag"><span class="fill">[coping mechanism]</span></span>
-          <span class="tag"><span class="fill">[coping mechanism]</span></span>
-        </div>
+        <div class="arch-card-title">Coping</div>
+        <h3>Working the toolkit until it stops working</h3>
+        <p>This archetype is using various coping mechanisms to handle their stress. These mechanisms included focusing on work and school, using humor, masking, and just acceptance for the way things were.</p>
+        <p>For example, RM001 described always moving to balance out his anxiety instead of seeking real help: staying busy, managing through motion rather than addressing the source. EF002 used hobbies, candles, friends, and pets to cope. ND005 used humor for years, masking as a very happy person, until they noticed it wasn't helping anymore and that the strategy they'd relied on had become unsustainable. FR003 was running on autopilot through postpartum depression without fully registering what was happening. EP008 handled many of their issues on their own for years, assuming everyone was struggling the same way, until they hit a wall as they entered college. The pattern across participants is consistent: they had strategies, and those strategies worked until they didn't. The decision to seek professional help comes at the end of that cycle, not the beginning. It's not avoidance; it's exhaustion of everything else first.</p>
+        <div class="arch-quote">"I used humor to cope, but noticed it wasn't helping anymore." — ND005</div>
       </div>
 
-      <!-- OPTIONAL ADDITIONAL COMPONENTS — uncomment and use if needed
-      <div class="arch-card" style="border-left:4px solid #8fad6b;">
-        <div class="arch-card-title">Agency / Self-efficacy</div>
-        <h3>[Agency headline]</h3>
-        <p>[What does this individual feel about their ability to perform and control over outcomes?]</p>
-      </div>
-
-      <div class="arch-card" style="border-left:4px solid #c49a6c;">
+      <!-- Norm Significance -->
+      <div class="arch-card norm-sig">
         <div class="arch-card-title">Norm Significance</div>
-        <h3>[Norm headline]</h3>
-        <p>[What are the social rules surrounding this context? How strongly does the individual relate to them?]</p>
+        <h3>Their social world sets the pace</h3>
+        <p>What the people around them think, or what they imagine those people will think, shapes the timeline more than any individual decision. EF002 spent weeks running through imaginary conversations with her parents prior to talking to her mom, simply because she was worried about how her parents would react to this news. ND005 said he grew up within a cultural context of Indonesia that perceived asking for help as weakness (you were strong if you could do things on your own) and therefore carried this way of thinking into adulthood before realizing there was another way. RM001 stated that his "a-ha" moment came after seeing a friend go through the process and didn't want the same experience. It was not the internalization of the information, but the peer experience that actually caused his resistance to break down.</p>
+        <p>The same dynamic works in reverse too. KC004's social world was normalized when it came to mental health care. Therefore, the norms of her social world made removing the barriers to access to mental health care much easier than adding to them. Her advocacy background and social circle had helped create a culture that viewed seeking help as normal behavior, not deviant behavior. SP007 reported a similar culture existed among her peers; she reported that therapy was just something people did and they talked about it all the time. When her brother called her to tell her he had his first therapy session, she reacted positively. In addition to delaying the journey, norms can also complicate the journey. When the social environment is right, norms can speed along the journey.</p>
+        <div class="arch-quote">"All my friends, like, we all know each other's prescription levels... when you're with your family, like, you know their negative habits... and when you see them go to therapy, you're happy that they're finally gonna be able to address those things." — SP007</div>
       </div>
-
-      <div class="arch-card" style="border-left:4px solid #9b6b9b;">
-        <div class="arch-card-title">Power Dynamics</div>
-        <h3>[Power dynamics headline]</h3>
-        <p>[What hierarchies exist in their social context? How do these affect decision-making?]</p>
-      </div>
-      -->
 
     </div>
-  </div>
+  </div><!-- /archetype-container -->
 
-  <!-- Written Archetype Description -->
+  <!-- Written Archetype Descriptions -->
   <div class="description-block">
     <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Written Description of Archetype Components</div>
     <div class="arch-desc-grid">
+
       <div class="desc-card">
         <h4>Goals &amp; Motivation</h4>
-        <div class="fill-block tall">Describe the archetype's goals and what motivates them. What is the situation's relevance to their goals? What is driving them toward or away from the target behavior?</div>
+        <p>The goals for this archetype is a return to normalcy and the avoidance of a terrible outcome. As their situation becomes more overwhelming, their realization that something isn't right and their concern for their mental health grows. This concern begins to drive them towards rectifying their situation. The motivation is intrinsic. It comes from the fear of continuing in a state of overwhelm and anxiety and the consequences of that.</p>
       </div>
+
       <div class="desc-card">
         <h4>Mental Models</h4>
-        <div class="fill-block tall">Describe the frameworks and beliefs this individual holds about this context. How do these mental models shape their decisions? What would need to shift for behavior to change?</div>
+        <p>Three mental models consistently presented with this archetype.</p>
+        <p>1. High Self-Concept / Self-Efficacy: If I'm functioning, I'm fine.<br>
+        &nbsp;&nbsp;&nbsp;a. These frameworks caused a delay in realization and action for the archetype. The belief that they're in control and do not need help, delayed their realization of becoming overwhelmed and seeking help.<br>
+        &nbsp;&nbsp;&nbsp;b. To shift this behavior, this archetype needed to see examples of people in their reference network who were going through similar things.</p>
+        <p>2. Self-Image: My concerns are not that bad or as bad as others.<br>
+        &nbsp;&nbsp;&nbsp;a. The belief that their concerns were not that bad or as bad as others also delayed their decision to seek help. Despite recognizing their stress levels and overwhelm, this archetype believes it's not that bad.<br>
+        &nbsp;&nbsp;&nbsp;b. To shift this behavior, this archetype had to realize what they were experiencing wasn't something minor and inconsequential.</p>
+        <p>3. Uncertainty: Will I be able to get an appointment, let alone one with someone I trust.<br>
+        &nbsp;&nbsp;&nbsp;a. The experience of uncertainty did not cause a delay in deciding to seek help, but it did cause a delay in finding help and a feeling of anxiety and frustration in finding someone suitable to work with.<br>
+        &nbsp;&nbsp;&nbsp;b. To shift this behavior, it's necessary to have more accessible resources for connecting with and finding diverse professionals.</p>
       </div>
+
       <div class="desc-card">
-        <h4>Self-image &amp; Coping (or your chosen 2)</h4>
-        <div class="fill-block tall">Describe the two additional components you selected. How do they connect to the goals, motivation, and mental models above? What do they explain about the behavioral pattern?</div>
+        <h4>Additional Components: Coping &amp; Norm Significance</h4>
+        <p>We selected coping and norm significance as our two additional components.</p>
+        <p>1. Coping was used as a way to accept or deny the existence of a problem whether it was subconscious or not. Coping helped the participants justify their high level of self-concept and efficacy.</p>
+        <p>2. Norm Significance connected to what was considered normal within each participants reference and social network. For each participant, they stated their friends and family would be supportive. This normalcy and support of mental health care helped prevent stigma based barriers. It didn't impact their self-image in a way that would prevent them from seeking help.</p>
       </div>
+
       <div class="desc-card">
         <h4>Process</h4>
-        <div class="fill-block tall">Describe how you built this archetype. What data and participants did you draw from? How did you identify the behavioral patterns that define this archetype? What did you include or leave out and why?</div>
+        <p>The archetype was built primarily from six participants: RM001, EF002, FR003, ND005, SP007, and AR006, with supporting context from EP008 and DC010. We coded across transcripts for shared behavioral patterns, first the tendency to delay despite awareness, the use of coping strategies before reaching out, and the role of social context in finally acting. From there, we identified the underlying beliefs driving those patterns. KC004 was treated as an alternate pathway because their pre-existing mental health advocacy background and shorter delay didn't fit the pattern of the other participants. EF009 had no usable response data as they were a no-show. We focused on beliefs and behaviors over demographics, because what made the archetype coherent wasn't age or job title it was the shared logic of waiting, managing, and eventually breaking through.</p>
       </div>
+
     </div>
   </div>
 
-  <!-- Process note -->
+  <!-- Overall Process Note -->
   <div class="process-note">
-    <h4>A Note on Process</h4>
-    <div class="fill-block" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4);">Add a brief overall note on your process — how you moved from raw interview data to these frameworks, any key decisions your group made, and what story these two frameworks together are trying to tell.</div>
+    <h4>Overall Process Note</h4>
+    <p>The journey map and the behavioral archetype are telling the same story from two different angles. The journey map shows the path and where it breaks down structurally. The archetype explains why the path takes as long as it does behaviorally. A young adult who is functioning on the outside, burning through coping strategies, shaped by norms that make asking for help feel like admitting failure, and finally reaching a moment where staying put costs more than reaching out, that's the through line across RM001, EF002, FR003, ND005, SP007, EP008, and AR006. The structural barriers that SP007 and EF002 encountered with insurance and scheduling make a hard thing harder at exactly the moment someone has finally built up enough resolve to act. The social environments described by ND005, EF002, and RM001 either shortened or extended the wait. Together, these two frameworks are trying to make the invisible delay visible, because that's where the real friction lives, and that's what any meaningful intervention would need to address.</p>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> The GitHub repository and the public link preview/hosting for this document were developed/maintained by our team. The webpage was made in-house as an HTML file that loads quickly and is easily viewed in a browser. Our team utilized Microsoft Copilot to create the fill-in template and outline (since not every member has technical experience or can write code) but all other writing, interpretation, and conclusions are ours, and we completed all the research methods, synthesis steps, and analysis of our data. We used GitHub Copilot to assist in generating the initial HTML/CSS template and place holder layout.
   </div>
 
 </div>
